@@ -5,9 +5,9 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание №1");
-        int[] array = new int[]{1, 2, 3, 1, 2, 3, 1, 2, 3, 1, 2, 3};
+        int[] array = new int[]{1, 2, 3};
         double[] array1 = {1.57d, 7.654d, 9.986d};
-        boolean[] array2 = {true, false, true, false};
+        boolean[] array2 = {true, false};
 
         System.out.println("Задание №2");
         for (int a = 0; a < array.length;a++) {
@@ -54,11 +54,13 @@ public class Main {
             }
         }
         System.out.println(" ");
+
         System.out.println("Задание №4");
         for (int b = 0; b < array.length; b++) {
             if (array[b] % 2 != 0) {
                 array[b]++; // решил сократить array[b] = array[b] + 1, но кажется так читается хуже, хоть и короче
             }
-        } System.out.print(Arrays.toString(array));
+        }
+        System.out.println(Arrays.toString(array));
     }
 }
