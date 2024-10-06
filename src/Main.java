@@ -5,62 +5,45 @@ import java.util.Arrays;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Задание №1");
-        int[] array = new int[]{1, 2, 3};
-        double[] array1 = {1.57d, 7.654d, 9.986d};
-        boolean[] array2 = {true, false};
+        int[] array = {1000, 250, 500, 10, 100};
+        int sum = 0;
+        for (int a : array) {
+            sum += a;
+        }
+        System.out.println("Сумма трат за месяц составила " + sum + " рублей");
 
         System.out.println("Задание №2");
-        for (int a = 0; a < array.length;a++) {
-            System.out.print(array[a]);
-            if (a != array.length - 1) {
-                System.out.print(", ");
+        int[] array1 = {1000, 250, 500, 10, 100};
+        Arrays.sort(array1);
+        System.out.println("Минимальная сумма трат за неделю составила " + array1[0] + " рублей. Максимальная сумма трат за неделю составила " + array1[array1.length - 1] + " рублей");
+
+        System.out.println("Задание №2 вариант 2"); // решил попробовать без sort сделать дополнительно
+        int max = -1;
+        for (final int current : array1) {
+            if (current > max) {
+                max = current;
             }
         }
-        System.out.println(" ");
-        for (int a = 0; a < array1.length;a++) {
-            System.out.print(array1[a]);
-            if (a != array1.length - 1) {
-                System.out.print(", ");
+        int min = max;
+        for (final int current : array1) {
+            if (current < min) {
+                min = current;
             }
         }
-        System.out.println(" ");
-        for (int a = 0; a < array2.length;a++) {
-            System.out.print(array2[a]);
-            if (a != array2.length - 1) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
+        System.out.println("Минимальная сумма трат за неделю составила " + min + " рублей. Максимальная сумма трат за неделю составила " + max + " рублей");
 
         System.out.println("Задание №3");
-        for (int a = array.length - 1; a >= 0;a--) {
-            System.out.print(array[a]);
-            if (a > 0) {
-                System.out.print(", ");
-            }
+        double[] array3 = {1000, 250, 500, 10, 100};
+        double average = 0;
+        for (double v : array3) {
+            average += v;
         }
-        System.out.println(" ");
-        for (int a = array1.length - 1; a >= 0;a--) {
-            System.out.print(array1[a]);
-            if (a > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
-        for (int a = array2.length - 1; a >= 0;a--) {
-            System.out.print(array2[a]);
-            if (a > 0) {
-                System.out.print(", ");
-            }
-        }
-        System.out.println(" ");
+        System.out.println("Средняя сумма трат за месяц составила " + (average / array3.length) + " рублей");
 
         System.out.println("Задание №4");
-        for (int b = 0; b < array.length; b++) {
-            if (array[b] % 2 != 0) {
-                array[b]++; // решил сократить array[b] = array[b] + 1, но кажется так читается хуже, хоть и короче
-            }
+        char[] reverseFullName = {'n', 'a', 'v', 'I', ' ', 'v', 'o', 'n', 'a', 'v', 'I'};
+        for (int a = reverseFullName.length - 1; a >= 0; a--) {
+            System.out.print(reverseFullName[a]);
         }
-        System.out.println(Arrays.toString(array));
     }
 }
